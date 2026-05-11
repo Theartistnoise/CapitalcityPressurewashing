@@ -772,7 +772,6 @@ function ShieldPlans({ openQuoteForm }) {
                   ? `linear-gradient(135deg, ${C.green}, ${C.greenBright})`
                   : "transparent",
                 color: plan.popular ? C.white : C.greenBright,
-                border: plan.popular ? "none" : `1px solid ${C.greenBright}`,
                 fontSize: 13, fontWeight: 700, letterSpacing: 1.5,
                 textTransform: "uppercase", cursor: "pointer",
               }}>Get Started</button>
