@@ -1,41 +1,770 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capital City Pressure Washing & Window Cleaning | Dirt Busters | Jefferson City, MO</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --green: #28C40F;
+  --green-dark: #1a9a09;
+  --black: #080808;
+  --deep: #0a0a0a;
+  --card: #111;
+  --border: #1e1e1e;
+  --white: #f0f0f0;
+  --muted: #666;
+  --amber: #FFB300;
+  --red: #FF3636;
+  --gold: #C9A84C;
+}
 
-    <title>Capital City Pressure Washing & Window Cleaning | Mid-Missouri's Premier Exterior Cleaning</title>
-    <meta name="description" content="Premium pressure washing, window cleaning, and exterior maintenance for high-end residential and commercial properties in Jefferson City, Columbia, and Mid-Missouri. Licensed, insured, locally owned." />
-    <meta name="keywords" content="pressure washing Jefferson City, window cleaning Columbia MO, commercial pressure washing mid-Missouri, exterior cleaning, soft wash, holiday lighting Jefferson City, permanent lighting, property maintenance" />
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
 
-    <meta property="og:title" content="Capital City Pressure Washing & Window Cleaning" />
-    <meta property="og:description" content="Mid-Missouri's premier exterior cleaning company. Premium service for high-end residential and commercial properties." />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-    <meta name="theme-color" content="#0a8c3a" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+/* ── STICKY BAR ── */
+.sticky-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--green);
+  text-align: center; padding: 10px 16px;
+  font-family: 'Bangers', cursive;
+  font-size: 15px; letter-spacing: 1.5px; color: #000;
+}
+.sticky-bar a { color: #000; font-weight: 900; text-decoration: underline; }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Capital City Pressure Washing & Window Cleaning",
-      "description": "Premium pressure washing, window cleaning, and exterior maintenance services for residential and commercial properties.",
-      "telephone": "+1-573-418-3221",
-      "areaServed": ["Jefferson City, MO", "Columbia, MO", "Holts Summit, MO", "Mid-Missouri"],
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Jefferson City",
-        "addressRegion": "MO",
-        "addressCountry": "US"
-      }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 40px; left: 0; right: 0; z-index: 100;
+  background: rgba(8,8,8,0.97);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: blur(10px);
+}
+.nav-brand {
+  font-family: 'Bangers', cursive;
+  font-size: 17px; letter-spacing: 1.5px; color: var(--green);
+}
+.nav-phone {
+  font-family: 'Bangers', cursive;
+  font-size: 18px; color: var(--green);
+  text-decoration: none; letter-spacing: 1px;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 140px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 0%, rgba(57,255,20,0.07) 0%, transparent 60%), var(--black);
+}
+
+.hero-eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: 5px;
+  color: var(--green); text-transform: uppercase; margin-bottom: 16px;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(56px, 12vw, 110px);
+  line-height: 0.88; letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(57,255,20,0.2);
+  margin-bottom: 8px;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-title span { color: var(--green); }
+.hero-tagline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 18px; color: var(--muted); margin-bottom: 32px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-form {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  max-width: 500px; margin: 0 auto 28px;
+  animation: fadeUp 0.9s ease both;
+}
+.hero-form input {
+  flex: 1; min-width: 200px;
+  background: #141414; border: 1px solid #333;
+  color: var(--white); font-family: 'Nunito', sans-serif;
+  font-size: 14px; padding: 14px 18px; outline: none;
+}
+.hero-form input:focus { border-color: var(--green); }
+.hero-form input::placeholder { color: #555; }
+.btn-green {
+  background: var(--green); color: #000;
+  font-family: 'Bangers', cursive; font-size: 18px;
+  letter-spacing: 1px; padding: 14px 28px;
+  border: none; cursor: pointer;
+  transition: all 0.2s; text-decoration: none; display: inline-block;
+}
+.btn-green:hover { background: #35d414; transform: translateY(-2px); }
+
+.hero-trust {
+  display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+  font-size: 12px; color: var(--muted); margin-bottom: 48px;
+  animation: fadeUp 1s ease both;
+}
+.hero-trust span::before { content: '✓ '; color: var(--green); font-weight: 900; }
+
+.hero-phone {
+  font-family: 'Bangers', cursive; font-size: 32px;
+  color: var(--green); text-decoration: none; letter-spacing: 2px;
+  animation: fadeUp 1.1s ease both;
+  display: flex; align-items: center; gap: 10px;
+}
+.phone-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--green);
+  animation: ping 1.8s infinite;
+}
+@keyframes ping {
+  0% { box-shadow: 0 0 0 0 rgba(57,255,20,0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(57,255,20,0); }
+  100% { box-shadow: 0 0 0 0 rgba(57,255,20,0); }
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* ── PROOF STRIP ── */
+.proof-strip {
+  background: var(--green);
+  padding: 16px 24px;
+  display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+}
+.proof-item { text-align: center; }
+.proof-num { font-family: 'Bangers', cursive; font-size: 28px; color: #000; line-height: 1; }
+.proof-label { font-size: 10px; color: #1a4a1e; letter-spacing: 2px; text-transform: uppercase; }
+
+/* ── SECTIONS ── */
+section { padding: 90px 0; }
+.section-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 5px;
+  color: var(--green); text-transform: uppercase; margin-bottom: 12px; display: block;
+}
+.section-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(36px, 6vw, 60px);
+  letter-spacing: 2px; line-height: 1; margin-bottom: 14px;
+}
+.section-title span { color: var(--green); }
+.section-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.7; font-weight: 300; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform: translateY(0); }
+
+/* ── PACKAGES ── */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; margin-top: 56px;
+}
+
+.pkg-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pkg-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+
+.pkg-card-top {
+  padding: 24px 22px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.pkg-c1 .pkg-card-top { background: linear-gradient(135deg, #0d1a0d, #111); border-top: 3px solid var(--green); }
+.pkg-c2 .pkg-card-top { background: linear-gradient(135deg, #1a1200, #111); border-top: 3px solid var(--amber); }
+.pkg-c3 .pkg-card-top { background: linear-gradient(135deg, #1a0500, #111); border-top: 3px solid var(--red); }
+.pkg-c4 .pkg-card-top { background: linear-gradient(135deg, #0a001a, #111); border-top: 3px solid #9B59FF; }
+
+.pkg-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+.pkg-level { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+.pkg-c1 .pkg-level { color: var(--green); }
+.pkg-c2 .pkg-level { color: var(--amber); }
+.pkg-c3 .pkg-level { color: var(--red); }
+.pkg-c4 .pkg-level { color: #9B59FF; }
+
+.pkg-name { font-family: 'Bangers', cursive; font-size: 24px; letter-spacing: 1px; color: var(--white); line-height: 1; margin-bottom: 6px; }
+.pkg-quote { font-family: 'Permanent Marker', cursive; font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+.pkg-card-body { padding: 20px 22px; }
+.pkg-price-row { display: flex; align-items: baseline; gap: 4px; margin-bottom: 16px; }
+.pkg-from { font-size: 11px; color: var(--muted); }
+.pkg-price { font-family: 'Bangers', cursive; font-size: 36px; line-height: 1; }
+.pkg-c1 .pkg-price { color: var(--green); }
+.pkg-c2 .pkg-price { color: var(--amber); }
+.pkg-c3 .pkg-price { color: var(--red); }
+.pkg-c4 .pkg-price { color: #9B59FF; }
+
+.pkg-includes { list-style: none; margin-bottom: 18px; }
+.pkg-includes li { font-size: 12px; color: #bbb; padding: 5px 0; border-bottom: 1px solid #1a1a1a; display: flex; gap: 8px; align-items: flex-start; }
+.pkg-c1 .pkg-includes li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
+.pkg-c2 .pkg-includes li::before { content: '✓'; color: var(--amber); font-weight: 900; flex-shrink: 0; }
+.pkg-c3 .pkg-includes li::before { content: '✓'; color: var(--red); font-weight: 900; flex-shrink: 0; }
+.pkg-c4 .pkg-includes li::before { content: '✓'; color: #9B59FF; font-weight: 900; flex-shrink: 0; }
+
+.pkg-perfect { font-size: 11px; color: var(--muted); line-height: 1.5; padding: 10px 12px; background: rgba(255,255,255,0.02); border-radius: 4px; }
+.pkg-perfect strong { color: var(--white); }
+
+.pkg-cta {
+  display: block; width: 100%; margin-top: 16px;
+  padding: 12px;
+  font-family: 'Bangers', cursive; font-size: 16px; letter-spacing: 1px;
+  border: none; cursor: pointer; transition: all 0.2s;
+}
+.pkg-c1 .pkg-cta { background: var(--green); color: #000; }
+.pkg-c2 .pkg-cta { background: var(--amber); color: #000; }
+.pkg-c3 .pkg-cta { background: var(--red); color: #fff; }
+.pkg-c4 .pkg-cta { background: #9B59FF; color: #fff; }
+.pkg-cta:hover { filter: brightness(1.15); transform: translateY(-1px); }
+
+/* ── HOW IT WORKS ── */
+.steps { background: var(--deep); }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0; margin-top: 56px;
+}
+.step-item { padding: 32px 24px; text-align: center; }
+.step-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bangers', cursive; font-size: 22px; color: var(--green);
+  margin: 0 auto 18px;
+}
+.step-title { font-family: 'Bangers', cursive; font-size: 20px; letter-spacing: 1px; margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+/* ── RECURRING CONTRACTS ── */
+.recurring-section { background: linear-gradient(135deg, #050f00, #0a0a0a); }
+.contract-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px;
+}
+@media(max-width:600px) { .contract-grid { grid-template-columns: 1fr; } }
+
+.contract-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.contract-card:hover { border-color: rgba(57,255,20,0.3); transform: translateY(-4px); }
+.contract-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+.contract-name { font-family: 'Bangers', cursive; font-size: 22px; letter-spacing: 1px; color: var(--white); margin-bottom: 8px; }
+.contract-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; font-weight: 300; }
+.contract-includes { list-style: none; }
+.contract-includes li { font-size: 12px; color: #bbb; padding: 5px 0; border-bottom: 1px solid #1a1a1a; display: flex; gap: 8px; }
+.contract-includes li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
+
+/* ── LIGHTING TEASER ── */
+.lighting-teaser {
+  background: linear-gradient(135deg, #0a0008, #100015);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 64px 48px;
+  text-align: center;
+  margin-top: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.lighting-teaser::before {
+  content: '💡';
+  position: absolute; font-size: 200px; opacity: 0.04;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.lt-label { font-size: 10px; font-weight: 800; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: block; }
+.lt-title { font-family: 'Bangers', cursive; font-size: clamp(32px, 6vw, 56px); letter-spacing: 2px; color: var(--white); margin-bottom: 12px; }
+.lt-title span { color: var(--gold); }
+.lt-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.6; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn-gold {
+  background: var(--gold); color: #000;
+  font-family: 'Bangers', cursive; font-size: 18px; letter-spacing: 2px;
+  padding: 14px 36px; border: none; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-gold:hover { background: #E8C96A; transform: translateY(-2px); }
+
+/* ── GUARANTEE ── */
+.guarantee-box {
+  background: linear-gradient(135deg, #050f00, #0a0a0a);
+  border: 1px solid rgba(57,255,20,0.15);
+  padding: 56px 40px; text-align: center;
+  max-width: 720px; margin: 0 auto;
+}
+.guarantee-icon { font-size: 52px; margin-bottom: 20px; display: block; }
+.guarantee-title { font-family: 'Bangers', cursive; font-size: clamp(28px, 5vw, 48px); letter-spacing: 2px; margin-bottom: 14px; }
+.guarantee-title span { color: var(--green); }
+.guarantee-text { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto 28px; font-weight: 300; }
+
+/* ── AREAS ── */
+.areas-section { background: var(--deep); }
+.areas-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.area-tag { background: #141414; border: 1px solid var(--border); padding: 7px 16px; font-size: 13px; color: var(--muted); font-family: 'Bangers', cursive; letter-spacing: 1px; }
+
+/* ── CTA ── */
+.final-cta {
+  text-align: center; padding: 100px 24px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(57,255,20,0.07) 0%, transparent 60%);
+}
+.final-cta h2 { font-family: 'Bangers', cursive; font-size: clamp(40px, 8vw, 80px); letter-spacing: 2px; line-height: 0.95; margin-bottom: 20px; }
+.final-cta h2 span { color: var(--green); }
+.final-cta p { font-size: 16px; color: var(--muted); margin-bottom: 36px; font-weight: 300; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline {
+  background: transparent; color: var(--white);
+  font-family: 'Bangers', cursive; font-size: 17px; letter-spacing: 1px;
+  padding: 14px 28px; border: 1px solid #444;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+/* ── MODAL ── */
+.modal-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.88); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal { background: var(--card); border: 1px solid var(--green); padding: 40px 32px; max-width: 460px; width: 100%; position: relative; transform: translateY(20px); transition: transform 0.3s; }
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+.modal-close:hover { color: var(--white); }
+.modal-title { font-family: 'Bangers', cursive; font-size: 26px; letter-spacing: 2px; margin-bottom: 6px; }
+.modal-title span { color: var(--green); }
+.modal-sub { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+.modal input, .modal select, .modal textarea { width: 100%; background: #0d0d0d; border: 1px solid var(--border); color: var(--white); font-family: 'Nunito', sans-serif; font-size: 13px; padding: 11px 14px; outline: none; margin-bottom: 10px; }
+.modal input:focus, .modal select:focus { border-color: var(--green); }
+.modal textarea { height: 70px; resize: vertical; }
+.modal-submit { width: 100%; padding: 14px; background: var(--green); color: #000; font-family: 'Bangers', cursive; font-size: 18px; letter-spacing: 2px; border: none; cursor: pointer; margin-top: 4px; transition: background 0.2s; }
+.modal-submit:hover { background: #35d414; }
+.modal-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; }
+
+/* ── FOOTER ── */
+footer { background: var(--deep); border-top: 1px solid var(--border); padding: 36px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: 'Bangers', cursive; font-size: 16px; color: var(--green); letter-spacing: 1px; }
+.footer-div { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.footer-info { font-size: 12px; color: var(--muted); text-align: right; }
+.footer-info a { color: var(--green); text-decoration: none; }
+
+@media(max-width:640px) {
+  nav { padding: 12px 16px; }
+  .hero-form { flex-direction: column; }
+  .hero-form input { min-width: unset; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-info { text-align: center; }
+  .lighting-teaser { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  🌿 Now Booking — Same-Week Scheduling Available &nbsp;|&nbsp;
+  <a href="tel:5734183221">(573) 418-3221</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">CAPITAL CITY PRESSURE WASHING</div>
+  <a href="tel:5734183221" class="nav-phone">📞 (573) 418-3221</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Jefferson City, MO · Mid-Missouri's Exterior Cleaning Crew</p>
+  <h1 class="hero-title">DIRT<br/><span>BUSTERS</span></h1>
+  <p class="hero-tagline">"Fighting Grime, One Wash at a Time"</p>
+
+  <div class="hero-form">
+    <input type="text" id="heroName" placeholder="Your Name"/>
+    <input type="tel" id="heroPhone" placeholder="Phone Number"/>
+    <button class="btn-green" onclick="openModal()">GET FREE QUOTE →</button>
+  </div>
+
+  <div class="hero-trust">
+    <span>$250 Minimum</span>
+    <span>Same-Day Response</span>
+    <span>7-Day Guarantee</span>
+    <span>Locally Owned</span>
+    <span>Before & After Photos Every Job</span>
+  </div>
+
+  <a href="tel:5734183221" class="hero-phone">
+    <span class="phone-dot"></span>
+    (573) 418-3221
+  </a>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item"><div class="proof-num">$250</div><div class="proof-label">Job Minimum</div></div>
+  <div class="proof-item"><div class="proof-num">5★</div><div class="proof-label">Average Rating</div></div>
+  <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Satisfaction Guaranteed</div></div>
+  <div class="proof-item"><div class="proof-num">24hr</div><div class="proof-label">Response Time</div></div>
+</div>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">The Dirt Busters Collection</span>
+      <h2 class="section-title">PICK YOUR <span>PACKAGE</span></h2>
+      <p class="section-sub">Every package includes before & after photos, your 7-day guarantee, and a crew that actually shows up on time.</p>
+    </div>
+
+    <div class="pkg-grid reveal">
+
+      <!-- PACKAGE 1 -->
+      <div class="pkg-card pkg-c1">
+        <div class="pkg-card-top">
+          <span class="pkg-emoji">👻</span>
+          <div class="pkg-level">Entry Level — Grime Fighter</div>
+          <div class="pkg-name">The Grime Fighter</div>
+          <div class="pkg-quote">"Quick knockout for your driveway & concrete"</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-price-row">
+            <span class="pkg-from">From</span>
+            <span class="pkg-price">$250</span>
+          </div>
+          <ul class="pkg-includes">
+            <li>Driveway or patio surface clean</li>
+            <li>Sidewalk & entryway</li>
+            <li>Pre-treatment of stains & oil</li>
+            <li>Before & after photos</li>
+            <li>7-day guarantee</li>
+          </ul>
+          <div class="pkg-perfect"><strong>Perfect for:</strong> Homeowners wanting a simple but effective refresh of their high-traffic outdoor areas.</div>
+          <button class="pkg-cta" onclick="openModal()">BOOK THIS →</button>
+        </div>
+      </div>
+
+      <!-- PACKAGE 2 -->
+      <div class="pkg-card pkg-c2">
+        <div class="pkg-card-top">
+          <span class="pkg-emoji">👹</span>
+          <div class="pkg-level">Standard — Gunk Eliminator</div>
+          <div class="pkg-name">The Gunk Eliminator</div>
+          <div class="pkg-quote">"More power, more shine — dirt is no match for us!"</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-price-row">
+            <span class="pkg-from">From</span>
+            <span class="pkg-price">$299</span>
+          </div>
+          <ul class="pkg-includes">
+            <li>Full soft wash house wash</li>
+            <li>All siding, fascia & soffits</li>
+            <li>Mold, mildew & algae removed</li>
+            <li>Garage door & entryway</li>
+            <li>Before & after photos</li>
+            <li>7-day guarantee</li>
+          </ul>
+          <div class="pkg-perfect"><strong>Perfect for:</strong> Those who want to give their entire home a noticeable facelift without breaking the bank.</div>
+          <button class="pkg-cta" onclick="openModal()">BOOK THIS →</button>
+        </div>
+      </div>
+
+      <!-- PACKAGE 3 -->
+      <div class="pkg-card pkg-c3">
+        <div class="pkg-card-top">
+          <span class="pkg-emoji">🦠</span>
+          <div class="pkg-level">Premium — Slime Slayer</div>
+          <div class="pkg-name">The Slime Slayer</div>
+          <div class="pkg-quote">"Dirt, algae, mold — consider them GONE!"</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-price-row">
+            <span class="pkg-from">From</span>
+            <span class="pkg-price">$499</span>
+          </div>
+          <ul class="pkg-includes">
+            <li>Full soft wash house wash</li>
+            <li>Driveway surface clean</li>
+            <li>Sidewalk & entryway</li>
+            <li>Mold & algae treatment</li>
+            <li>Before & after photos</li>
+            <li>7-day guarantee</li>
+          </ul>
+          <div class="pkg-perfect"><strong>Perfect for:</strong> Homeowners looking for a complete exterior upgrade — house, driveway, and full curb appeal done right.</div>
+          <button class="pkg-cta" onclick="openModal()">BOOK THIS →</button>
+        </div>
+      </div>
+
+      <!-- PACKAGE 4 -->
+      <div class="pkg-card pkg-c4">
+        <div class="pkg-card-top">
+          <span class="pkg-emoji">🦸</span>
+          <div class="pkg-level">Ultimate — Ghostbuster</div>
+          <div class="pkg-name">The Ghostbuster</div>
+          <div class="pkg-quote">"When the dirt is out of control, call in the big guns!"</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-price-row">
+            <span class="pkg-from">From</span>
+            <span class="pkg-price">$799</span>
+          </div>
+          <ul class="pkg-includes">
+            <li>Full soft wash house wash</li>
+            <li>Driveway & sidewalk clean</li>
+            <li>Full exterior window cleaning</li>
+            <li>All frames & sills wiped</li>
+            <li>Before & after photos</li>
+            <li>7-day guarantee</li>
+          </ul>
+          <div class="pkg-perfect"><strong>Perfect for:</strong> Real estate agents, pre-listing cleans, or homeowners who want a top-tier deep clean for maximum curb appeal.</div>
+          <button class="pkg-cta" onclick="openModal()">BOOK THIS →</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ADD ONS -->
+    <div class="reveal" style="margin-top:40px;background:var(--card);border:1px solid var(--border);padding:28px 24px;">
+      <div style="font-family:'Bangers',cursive;font-size:20px;letter-spacing:2px;margin-bottom:16px;color:var(--green);">ADD-ON SERVICES</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🪟 Window Cleaning — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🏗️ Deck Wash — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🎨 Deck Stain & Seal — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🌿 Gutter Brightening — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🧱 Fence Cleaning — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">☀️ Solar Panel Cleaning — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🏊 Pool Patio Clean — <span style="color:var(--green);">get a quote</span></div>
+        <div style="font-size:12px;color:#bbb;padding:8px 0;border-bottom:1px solid #1a1a1a;">🧱 Concrete Sealing — <span style="color:var(--green);">get a quote</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Simple Process</span>
+      <h2 class="section-title">DONE IN <span>3 STEPS</span></h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-title">Request a Quote</div>
+        <div class="step-desc">Fill out the form or call/text us. We respond same day — usually within 2 hours.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-title">We Show Up</div>
+        <div class="step-desc">On time. In uniform. With the right equipment for your specific surfaces.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-title">You're Impressed</div>
+        <div class="step-desc">Walkthrough when done. Before & after photos texted to you. Anything not right — we come back free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECURRING CONTRACTS -->
+<section class="recurring-section" id="contracts">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Recurring Service Contracts</span>
+      <h2 class="section-title">NEVER THINK ABOUT IT <span>AGAIN</span></h2>
+      <p class="section-sub">Lock in a recurring schedule and we handle the rest. Residential and commercial contracts available — priority scheduling, locked-in rates, guaranteed consistency.</p>
+    </div>
+
+    <div class="contract-grid reveal">
+      <div class="contract-card">
+        <span class="contract-icon">🏠</span>
+        <div class="contract-name">Residential Contract</div>
+        <div class="contract-desc">Set your schedule — monthly, quarterly, semi-annual. We show up, do the work, send photos. You never have to call around or scramble before company comes over.</div>
+        <ul class="contract-includes">
+          <li>House wash on your schedule</li>
+          <li>Driveway, windows, deck — whatever you need</li>
+          <li>10% off vs. one-time rates</li>
+          <li>Priority scheduling — your dates are locked</li>
+          <li>Before & after photos every visit</li>
+          <li>Cancel anytime with 30 days notice</li>
+        </ul>
+      </div>
+
+      <div class="contract-card">
+        <span class="contract-icon">🏢</span>
+        <div class="contract-name">Commercial Contract</div>
+        <div class="contract-desc">Your storefront, parking lot, and building exterior on a set schedule. Consistent, professional, documented. Your business always makes the right first impression.</div>
+        <ul class="contract-includes">
+          <li>Window cleaning — weekly, bi-weekly, or monthly</li>
+          <li>Building exterior wash on schedule</li>
+          <li>Entryway & sidewalk maintenance</li>
+          <li>15% off vs. one-time commercial rates</li>
+          <li>Monthly service report with photos</li>
+          <li>Certificate of service on request</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:32px;">
+      <button class="btn-green" onclick="openModal()">INQUIRE ABOUT A CONTRACT →</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTING TEASER -->
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="lighting-teaser reveal">
+      <span class="lt-label">New Service Division</span>
+      <h2 class="lt-title">CAPITAL CITY <span>LIGHTING CO.</span></h2>
+      <p class="lt-sub">Permanent LED roofline lighting — installed once, app-controlled, 16 million colors. Never hang seasonal lights again. Backed by a 2-year workmanship warranty.</p>
+      <a href="capital_city_lighting.html" class="btn-gold">LEARN MORE →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section>
+  <div class="container">
+    <div class="guarantee-box reveal">
+      <span class="guarantee-icon">🛡️</span>
+      <h2 class="guarantee-title">THE 100% <span>CLEAN</span> GUARANTEE</h2>
+      <p class="guarantee-text">Not satisfied with any part of the work? Contact us within 7 days and we come back and redo it — free. No arguments. No runaround. We stand behind every single job.</p>
+      <button class="btn-green" onclick="openModal()">BOOK WITH CONFIDENCE →</button>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Service Area</span>
+      <h2 class="section-title">WE COVER <span>MID-MISSOURI</span></h2>
+    </div>
+    <div class="areas-wrap reveal">
+      <span class="area-tag">Jefferson City</span>
+      <span class="area-tag">Holts Summit</span>
+      <span class="area-tag">St. Martins</span>
+      <span class="area-tag">Wardsville</span>
+      <span class="area-tag">Taos</span>
+      <span class="area-tag">Fulton</span>
+      <span class="area-tag">Ashland</span>
+      <span class="area-tag">Columbia</span>
+      <span class="area-tag">California, MO</span>
+      <span class="area-tag">Eugene</span>
+      <span class="area-tag">+ Surrounding Areas</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="reveal">READY TO BUST<br/><span>SOME GRIME?</span></h2>
+    <p class="reveal">Get your free quote today. Same-day response. No obligation.</p>
+    <div class="cta-btns reveal">
+      <button class="btn-green" onclick="openModal()">GET FREE QUOTE →</button>
+      <a href="tel:5734183221" class="btn-outline">📞 (573) 418-3221</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">CAPITAL CITY PRESSURE WASHING & WINDOW CLEANING</div>
+    <div class="footer-div">Home of the Dirt Busters · Jefferson City, MO</div>
+  </div>
+  <div class="footer-info">
+    <a href="tel:5734183221">(573) 418-3221</a><br/>
+    Locally Owned & Operated<br/>
+    <span style="font-size:10px;color:#333;margin-top:4px;display:block;">© 2025 Capital City Pressure Washing & Window Cleaning LLC</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">GET YOUR <span>FREE QUOTE</span></div>
+    <p class="modal-sub">We'll get back to you same day — usually within 2 hours.</p>
+    <input type="text" id="mName" placeholder="Your Name *"/>
+    <input type="tel" id="mPhone" placeholder="Phone Number *"/>
+    <input type="text" id="mAddress" placeholder="Property Address"/>
+    <select id="mService">
+      <option value="" disabled selected>Service Interested In</option>
+      <option>The Grime Fighter — Driveway/Patio from $250</option>
+      <option>The Gunk Eliminator — House Wash from $299</option>
+      <option>🦠 Slime Slayer — House + Driveway from $499</option>
+      <option>🦸 Ghostbuster — Full Day from $799</option>
+      <option>Deck Wash</option>
+      <option>Window Cleaning</option>
+      <option>Recurring Service Contract</option>
+      <option>Permanent Lighting — Capital City Lighting Co.</option>
+      <option>Not sure — just want a quote</option>
+    </select>
+    <textarea id="mNotes" placeholder="Anything else? (optional)"></textarea>
+    <button class="modal-submit" onclick="submitLead()">SEND MY REQUEST →</button>
+    <p class="modal-note">No spam. Your info is used to contact you about your quote only.</p>
+  </div>
+</div>
+
+<script>
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 70);
+      obs.unobserve(e.target);
     }
-    </script>
-  </head>
-  <body style="margin:0;background:#0a0a0a;">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Modal
+function openModal() {
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const n = document.getElementById('heroName').value;
+  const p = document.getElementById('heroPhone').value;
+  if (n) document.getElementById('mName').value = n;
+  if (p) document.getElementById('mPhone').value = p;
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+function submitLead() {
+  const n = document.getElementById('mName').value.trim();
+  const p = document.getElementById('mPhone').value.trim();
+  if (!n || !p) { alert('Please enter your name and phone number.'); return; }
+  document.querySelector('.modal').innerHTML = `
+    <div style="text-align:center;padding:20px 0;">
+      <div style="font-size:52px;margin-bottom:16px;">✅</div>
+      <h3 style="font-family:'Bangers',cursive;font-size:28px;letter-spacing:2px;color:#f0f0f0;margin-bottom:10px;">YOU'RE ALL SET, ${n.toUpperCase()}!</h3>
+      <p style="color:#666;font-size:14px;margin-bottom:20px;">We'll be calling <strong style="color:#28C40F">${p}</strong> within 24 hours — usually the same day.</p>
+      <a href="tel:5734183221" style="font-family:'Bangers',cursive;font-size:20px;color:#28C40F;text-decoration:none;letter-spacing:1px;">📞 Can't Wait? Call Now →</a>
+    </div>
+  `;
+}
+</script>
+</body>
 </html>
