@@ -752,18 +752,44 @@ function closeModal() {
 function closeModalOutside(e) {
   if (e.target === document.getElementById('modal')) closeModal();
 }
-function submitLead() {
+async function submitLead() {
   const n = document.getElementById('mName').value.trim();
   const p = document.getElementById('mPhone').value.trim();
+  const a = document.getElementById('mAddress').value.trim();
+  const s = document.getElementById('mService').value;
+  const notes = document.getElementById('mNotes').value.trim();
   if (!n || !p) { alert('Please enter your name and phone number.'); return; }
-  document.querySelector('.modal').innerHTML = `
-    <div style="text-align:center;padding:20px 0;">
-      <div style="font-size:52px;margin-bottom:16px;">✅</div>
-      <h3 style="font-family:'Bangers',cursive;font-size:28px;letter-spacing:2px;color:#f0f0f0;margin-bottom:10px;">YOU'RE ALL SET, ${n.toUpperCase()}!</h3>
-      <p style="color:#666;font-size:14px;margin-bottom:20px;">We'll be calling <strong style="color:#28C40F">${p}</strong> within 24 hours — usually the same day.</p>
-      <a href="tel:5734183221" style="font-family:'Bangers',cursive;font-size:20px;color:#28C40F;text-decoration:none;letter-spacing:1px;">📞 Can't Wait? Call Now →</a>
-    </div>
-  `;
+
+  const btn = document.querySelector('.modal-submit');
+  btn.textContent = 'SENDING...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/mbdearkr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: n, phone: p, address: a, service: s, notes: notes })
+    });
+
+    if (res.ok) {
+      document.querySelector('.modal').innerHTML = `
+        <div style="text-align:center;padding:20px 0;">
+          <div style="font-size:52px;margin-bottom:16px;">✅</div>
+          <h3 style="font-family:'Bangers',cursive;font-size:28px;letter-spacing:2px;color:#f0f0f0;margin-bottom:10px;">YOU'RE ALL SET, ${n.toUpperCase()}!</h3>
+          <p style="color:#666;font-size:14px;margin-bottom:20px;">We'll be calling <strong style="color:#28C40F">${p}</strong> within 24 hours — usually the same day.</p>
+          <a href="tel:5734183221" style="font-family:'Bangers',cursive;font-size:20px;color:#28C40F;text-decoration:none;letter-spacing:1px;">📞 Can't Wait? Call Now →</a>
+        </div>
+      `;
+    } else {
+      btn.textContent = 'SEND MY REQUEST →';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us directly at (573) 418-3221.');
+    }
+  } catch(err) {
+    btn.textContent = 'SEND MY REQUEST →';
+    btn.disabled = false;
+    alert('Something went wrong. Please call us directly at (573) 418-3221.');
+  }
 }
 </script>
 </body>
