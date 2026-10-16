@@ -592,5 +592,6 @@ pages = [
    "Gutter guards available now. Porch screening, decks, light framing, gutters, siding and roofing coming to Mid-Missouri in 2027. Join the early list.", home_services, "owner-roof"),
 ]
 for fname, cur, title, desc, body, og in pages:
-    open(fname, "w").write(page(fname, cur, title, desc, body, og))
+    out = fname if fname == "index.html" else "public/" + fname   # sub-pages ship as static files
+    open(out, "w").write(page(fname, cur, title, desc, body, og))
 print("built", [p[0] for p in pages])

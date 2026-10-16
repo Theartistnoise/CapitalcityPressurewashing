@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 
+// index.html is the entry; the other pages live in /public and are copied as-is.
 export default defineConfig({
-  plugins: [react()],
-  build: { outDir: 'dist' }
+  build: { outDir: 'dist' },
 });
